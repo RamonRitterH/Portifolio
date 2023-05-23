@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root { /* Pseudoclasse variavel global para definir as cores de forma mais fácil */
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-terciaria: #eeff00;
+    --cor-hover: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Viewport é a porção de áre visível de um plano e é utilizada como unidade de medida no CSS, variando de dispositivos. */
+
+body {
+    /* height: 100vh; viewpoint height / Ponto de vista total */
+    box-sizing: border-box; /* Limite para não sair da borda */
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+.Destaque {
+    color: var(--cor-terciaria);
+}
+
+.Cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.Cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.Cabecalho__menu__link {
+    display: flex;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    border: 4px solid var(--cor-secundaria);
+    padding: 1%;
+    border-radius: 20%;
+    text-decoration: none;
+}
+
+.Cabecalho__menu__link:hover { /* EXTRAAAAA */
+    background-color: var(--cor-hover);
+}
+
+.Apresentacao { /* Flexbox */
+    /* margin: 10% 15%; */
+    padding: 5% 15%;
+    display: flex; /* Alinhamento */
+    align-items: center; /* Centralizar Alinhamento */
+    justify-content: space-between; /* Espaçamento  Horizontal */
+    gap: 82px;
+}
+
+.Apresentacao__conteudo {
+    width: 50%; /* Largura */
+    display: flex;
+    flex-direction: column; /* Vertical */
+    gap: 40px; /* Espaçamento entre colunas */
+}
+
+/*#########################*/
+.Apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /**** Tamanho automático da Fonte / 1rem = 16px / 36/16 = 2.25 */
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+.Apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+.Apresentacao__links {
+    display: flex; /* Sempre começa com display */
+    flex-direction: column; /* Vertical */
+    align-items: center; /* Centralizar Alinhamento */
+    gap: 32px; /* Espaçamento entre colunas ou objetos */
+    justify-content: space-between;
+}
+
+.Apresentacao__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.Apresentacao__links__navegacao {
+    display: flex;
+    justify-content: center; /* Centralizar texto do botao */
+    /*background-color: #eeff00;*/
+    /* CTRL + K + C = Comentario */
+    gap: 17px; /* Espacamento */
+    border: 7px solid var(--cor-secundaria);
+    /* border-style: solid; */
+    width: 50%;
+    text-align: center; /* Alinhamento central  */
+    border-radius: 9px; /* Arredonda */
+    font-size: 1.5rem;
+    padding: 21.5px 0; /* Altura */
+    text-decoration: none; /* Tira a decoração, sublinhado */
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600; /* Negrito */
+}
+
+.Apresentacao__links__link:hover {
+    background-color: var(--cor-hover);
+
+}
+
+/* Utiliza porcentagem RELATIVA para melhorar automaticamente a resolucao da imagem para diferentes telas */
+.Apresentacao__imagem {
+    width: 50%;
+}
+
+/* Animação, estilização dos botões */
+
+.Rodape {
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria); /* Ligado com variavel */
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+/* Break Point & Media Querie */
+@media (max-width: 1200px) {
+    .Cabecalho {
+        padding: 10%; /* Espaçamento */
+    }
+.Cabecalho__menu {
+    justify-content: center;
+}
+
+    .Apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .Apresentacao__conteudo {
+        width: auto; /* Calculo automatico */
+    }
+}
